@@ -7,7 +7,9 @@ const cors = require("cors")
 const app = express();
 app.use(express.json())
 app.use(cors())
-
+app.use("/",(req,res)=>{
+    res.send("Home Page")
+})
 app.use("/", tripRoute)
 
 app.listen(process.env.PORT || 4000,async()=>{
